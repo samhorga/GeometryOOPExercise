@@ -25,7 +25,10 @@ public abstract class Shape {
         this.centerPoint = point;
     }
 
-    public Point getShapeCenter() {
+    public Point getShapeCenter() throws NoCenterPointFound {
+        if(centerPoint == null) {
+            throw new NoCenterPointFound("No shape found");
+        }
         return centerPoint;
     }
 }
